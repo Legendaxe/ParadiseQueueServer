@@ -1,0 +1,6 @@
+# This file is stolen from tg
+version: 1
+byond: "515.1619"
+static_files:
+  - name: config.json
+security: Trusted

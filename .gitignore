@@ -1,0 +1,12 @@
+#ignore misc BYOND files
+*.int
+*.rsc
+*.dmb
+*.lk
+
+#ignore cfg
+config.json
+
+QueueWebApplication/src/QueueWebApplication.API/bin
+QueueWebApplication/src/QueueWebApplication.API/obj
+
