@@ -9,4 +9,5 @@ config.json
 
 QueueWebApplication/src/QueueWebApplication.API/bin
 QueueWebApplication/src/QueueWebApplication.API/obj
-
+QueueWebApplication/src/QueueWebApplication.Core/bin
+QueueWebApplication/src/QueueWebApplication.Core/obj
