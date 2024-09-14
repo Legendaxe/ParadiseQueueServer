@@ -1,15 +1,11 @@
-// BEGIN_INTERNALS
-// END_INTERNALS
-// BEGIN_FILE_DIR
-#define FILE_DIR .
-// END_FILE_DIR
-// BEGIN_PREFERENCES
-// END_PREFERENCES
-// BEGIN_INCLUDE
-#include "code\__defines.dm"
-#include "code\client.dm"
-#include "code\globals.dm"
-#include "code\overrides.dm"
-#include "code\world.dm"
-#include "interface\skin.dmf"
-// END_INCLUDE
+#define DEBUG
+#include "ByondServer\code\defines\__defines.dm"
+#include "ByondServer\code\defines\rust_g.dm"
+#include "ByondServer\code\client.dm"
+#include "ByondServer\code\globals.dm"
+#include "ByondServer\code\overrides.dm"
+#include "ByondServer\code\world.dm"
+#include "ByondServer\code\Paradise\callback.dm"
+#include "ByondServer\code\Paradise\http.dm"
+#include "ByondServer\code\Paradise\SShttp.dm"
+#include "ByondServer\interface\skin.dmf"

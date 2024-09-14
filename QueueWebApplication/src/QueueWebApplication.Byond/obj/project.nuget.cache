@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "+UTdR6xePk/3V4ZcY9SylZMnsq/t7Kl07Z2b7vxhowTqmdEmZ9Qphl5ZtWjnJwQU53Zy1QVNwt6NmDVK7UnSDw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\vogne\\Desktop\\University\\space station13\\ParadiseQueueServer\\QueueWebApplication\\src\\QueueWebApplication.Byond\\QueueWebApplication.Byond.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vogne\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.16\\microsoft.netcore.app.ref.7.0.16.nupkg.sha512",
+    "C:\\Users\\vogne\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.16\\microsoft.windowsdesktop.app.ref.7.0.16.nupkg.sha512",
+    "C:\\Users\\vogne\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.16\\microsoft.aspnetcore.app.ref.7.0.16.nupkg.sha512"
+  ],
+  "logs": []
+}

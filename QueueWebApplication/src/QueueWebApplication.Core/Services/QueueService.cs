@@ -1,41 +1,66 @@
-﻿using System.Timers;
-using Microsoft.Extensions.Hosting;
+﻿using QueueWebApplication.Core.DTOs;
 using QueueWebApplication.Core.Entities;
 using QueueWebApplication.Core.Interfaces.Services;
-using Timer = System.Timers.Timer;
 
 namespace QueueWebApplication.Core.Services;
 
-public class QueueService : BackgroundService
+public sealed class QueueService : IQueueService
 {
+	private readonly Dictionary<string, List<WaitingClientDto>> _serversQueue = [];
+    private IServerManagerService ServersManagerService { get; }
+    private IIpPassService IpPassService { get; }
 
-    private readonly List<WaitingClient> _clientsQueue = new List<WaitingClient>();
+    public QueueService(IServerManagerService serversManagerService, IIpPassService ipPassService)
+    {
+	    ServersManagerService = serversManagerService;
+	    IpPassService = ipPassService;
+	    foreach (var serverName in ServersManagerService.GetServersNames())
+	    {
+		    _serversQueue.Add(serverName, []);
+	    }
+    }
 
-    public void AddClientToQueue(WaitingClient clientToAdd)
+    private async Task ProcessServerQueue(string serverName, Server server)
     {
-        for (int i = 0; i < _clientsQueue.Count; i++)
-        {
-            if (_clientsQueue[i].DonateTier < clientToAdd.DonateTier)
-            {
-                _clientsQueue.Insert(i, clientToAdd);
-                return;
-            }
-        }
-        
-        _clientsQueue.Add(clientToAdd);
+	    var queue = _serversQueue[serverName];
+	    if (queue.Count == 0)
+	    {
+		    return;
+	    }
+
+	    var availableSlots = await ServersManagerService.GetAvailableSlots(serverName);
+
+	    for (var i = 0; i < availableSlots; i++)
+	    {
+		    if (queue.Count == 0)
+		    {
+			    break;
+		    }
+		    await IpPassService.AddPassToServer(queue[0].Ckey, server);
+		    RemoveClientFromQueue(queue[0], serverName);
+	    }
     }
-    protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+
+    public async Task ProcessAllQueues()
     {
-        while (!stoppingToken.IsCancellationRequested)
-        {
-            try
-            {
-            }
-            catch (Exception ex)
-            {
-            }
- 
-            await Task.Delay(5000, stoppingToken);
-        }
+	    await Task.WhenAll(ServersManagerService.GetServers()
+		    .Select(server => ProcessServerQueue(server.Key, server.Value)));
     }
+
+    public void AddClientToQueue(WaitingClientDto clientDtoToAdd, string serverName)
+    {
+	    var queue = _serversQueue[serverName];
+        for (var i = 0; i < queue.Count; i++)
+        {
+	        if (queue[i].DonateTier >= clientDtoToAdd.DonateTier) continue;
+	        queue.Insert(i, clientDtoToAdd);
+	        return;
+        }
+
+        queue.Add(clientDtoToAdd);
+    }
+
+    public void RemoveClientFromQueue(WaitingClientDto clientDtoToRemove, string serverName)
+		=> _serversQueue[serverName].Remove(clientDtoToRemove);
+
 }
