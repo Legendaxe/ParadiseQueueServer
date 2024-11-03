@@ -1,4 +1,5 @@
-﻿using QueueWebApplication.Core.Entities;
+﻿using QueueWebApplication.Core.Dtos;
+using QueueWebApplication.Core.Entities;
 
 namespace QueueWebApplication.Core.Interfaces.Services;
 
@@ -9,4 +10,7 @@ public interface IServerManagerService
 	public IEnumerable<string> GetServersNames();
 	public ValueTask<int> GetAvailableSlots(string serverName);
 	public ValueTask<IEnumerable<string>> GetPlayersList(string serverName);
+	public IEnumerable<ServerInitDto> GetServersInitDtos();
+	public IEnumerable<ServerStatusDto> GetServersStatusDtos();
+	public Task UpdateAllServers();
 }

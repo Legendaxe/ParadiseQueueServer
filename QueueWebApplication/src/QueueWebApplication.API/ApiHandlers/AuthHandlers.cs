@@ -5,7 +5,8 @@ using System.Security.Claims;
 using System.Text;
 using System.Text.Json;
 using Microsoft.IdentityModel.Tokens;
-using QueueWebApplication.API.Claims;
+using QueueWebApplication.Core.Claims;
+using QueueWebApplication.Core.Dtos;
 using QueueWebApplication.Core.Interfaces.Services;
 
 namespace QueueWebApplication.API.ApiHandlers;
@@ -22,7 +23,7 @@ public static class AuthHandlers
 	{
 		ipPassService.LinkIp(ckey, IPAddress.Parse(ip));
 		var player = await playersDbService.GetPlayerInfo(ckey);
-
+		// var player = new PlayerDto("legendaxe", "admin", 4, false, [4002, 5, 20]);
 		var issuer = configuration["Jwt:Issuer"];
 		var audience = configuration["Jwt:Audience"];
 		var key = Encoding.ASCII.GetBytes
@@ -32,7 +33,7 @@ public static class AuthHandlers
 		{
 			Subject = new ClaimsIdentity(new[]
 			{
-				new Claim(JwtRegisteredClaimNames.Sub, ckey),
+				new Claim(JwtRegisteredClaimNames.Sub, player.Ckey),
 				new Claim(JwtPlayerClaims.Role, player.Role),
 				new Claim(JwtPlayerClaims.DonateTier, player.DonateTier.ToString(), ClaimValueTypes.Integer),
 				new Claim(JwtPlayerClaims.Ban, player.Ban.ToString(), ClaimValueTypes.Boolean),

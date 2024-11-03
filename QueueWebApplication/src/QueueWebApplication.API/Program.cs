@@ -8,7 +8,7 @@ using QueueWebApplication.API.ApiHandlers;
 using QueueWebApplication.API.AuthorizationHandlers;
 using QueueWebApplication.API.Middlewares;
 using QueueWebApplication.Core.Db;
-using QueueWebApplication.Core.DTOs.Messages;
+using QueueWebApplication.Core.Dtos.Messages;
 using QueueWebApplication.Core.Hubs;
 using QueueWebApplication.Core.Interfaces.Services;
 using QueueWebApplication.Core.Services;
@@ -26,6 +26,7 @@ services.AddDbContextFactory<ParadiseDbContext>(options =>
 {
 	var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 	options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+	options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 });
 services.AddAuthentication(options =>
 {
@@ -42,11 +43,26 @@ services.AddAuthentication(options =>
 			(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!)),
 		ValidateIssuer = true,
 		ValidateAudience = true,
-		ValidateLifetime = false,
+		ValidateLifetime = true,
 		ValidateIssuerSigningKey = true
 	};
 	options.MapInboundClaims = false;
 	options.SaveToken = true;
+	options.Events = new JwtBearerEvents
+	{
+		OnMessageReceived = context =>
+		{
+			var accessToken = context.Request.Query["access_token"];
+
+			var path = context.HttpContext.Request.Path;
+			if (!string.IsNullOrEmpty(accessToken) &&
+			    (path.StartsWithSegments("/hubs/servers")))
+			{
+				context.Token = accessToken;
+			}
+			return Task.CompletedTask;
+		}
+	};
 } );
 services.AddAuthorizationBuilder()
 	.AddPolicy("IpWhitelistPolicy", policy => policy.Requirements.Add(new IpCheckRequirement { IpClaimRequired = true }));
@@ -68,28 +84,29 @@ services.AddSingleton<IPlayersDictionariesService, PlayersDictionariesService>()
 services.AddSingleton<ITopicClientFactory, TopicClientFactory>();
 services.AddSingleton<IByondApiService, ByondApiService>();
 services.AddSingleton<IAuthorizationHandler, IpCheckHandler>();
+services.AddSingleton<IQueueStorageService, QueueStorageService>();
 services.AddHostedService<QueueBackgroundService>();
 services.AddHostedService<FetchPlayersBackgroundService>();
 
-
 var app = builder.Build();
 
+app.UseForwardedHeaders();
 app.UseAuthentication();
 app.UseMiddleware<IpSafeListMiddleware>();
 app.UseAuthorization();
 app.UseHttpsRedirection();
-app.UseForwardedHeaders();
 
-// if (app.Environment.IsDevelopment())
-// {
-//      app.UseSwagger();
-//      app.UseSwaggerUI();
-// }
+if (app.Environment.IsDevelopment())
+{
 
-app.MapHub<IpTablesControllersHub>("/iptables-daemon");//.RequireAuthorization("IpWhitelistPolicy");
+}
 
 var apiGroup = app.MapGroup("/api");
 var queueGroup = app.MapGroup("/queue");
+var hubGroup = app.MapGroup("/hubs");
+
+hubGroup.MapHub<IpTablesControllersHub>("/iptables-daemon").RequireAuthorization("IpWhitelistPolicy");
+hubGroup.MapHub<QueueHub>("/servers");
 
 apiGroup.MapGet("/five", () => 5);
 queueGroup.MapPost("/add-client", ClientsQueue.AddClient).RequireAuthorization();

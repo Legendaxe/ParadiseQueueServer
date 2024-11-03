@@ -1,0 +1,14 @@
+{
+  "/hubs/servers": {
+    "target": "https://localhost:7000",
+    "secure": false,
+    "logLevel": "debug",
+    "ws": true
+  },
+  "/queue/add-client": {
+    "target": "https://localhost:7000",
+    "secure": false,
+    "changeOrigin" : true,
+    "logLevel": "debug"
+  }
+}

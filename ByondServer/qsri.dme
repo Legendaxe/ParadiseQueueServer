@@ -1,0 +1,11 @@
+#define DEBUG
+#include "code\defines\__defines.dm"
+#include "code\defines\rust_g.dm"
+#include "code\client.dm"
+#include "code\globals.dm"
+#include "code\overrides.dm"
+#include "code\world.dm"
+#include "code\Paradise\callback.dm"
+#include "code\Paradise\http.dm"
+#include "code\Paradise\SShttp.dm"
+#include "interface\skin.dmf"

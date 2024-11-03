@@ -3,37 +3,16 @@ using Microsoft.AspNetCore.SignalR;
 using QueueWebApplication.Core.Entities;
 using QueueWebApplication.Core.Hubs;
 using QueueWebApplication.Core.Interfaces.Services;
+using QueueWebApplication.Core.Dtos.Messages;
+using Action = QueueWebApplication.Core.Dtos.Messages.Action;
 
 namespace QueueWebApplication.Core.Services;
 
-public sealed class IpPassService(IHubContext<IpTablesControllersHub> iptablesHubContext) : IIpPassService
+public sealed class IpPassService(IHubContext<IpTablesControllersHub, IIptablesControllersHub> iptablesHubContext) : IIpPassService
 {
 	private readonly Dictionary<string, Dictionary<IPAddress, DateTime>> _ckeyIpLink = [];
 	private readonly Dictionary<IPAddress, HashSet<Server>> _passesDictionary = [];
-	private IHubContext<IpTablesControllersHub> IptablesHubContext { get; } = iptablesHubContext;
-
-	private async Task RemovePassesForIp(IPAddress ip)
-	{
-		if (!_passesDictionary.TryGetValue(ip, out var servers))
-		{
-			return;
-		}
-
-		foreach (var server in servers)
-		{
-			await RemovePassFromServer(ip, server);
-		}
-	}
-
-	private async Task RemoveExpiredIps(string ckey)
-	{
-		foreach (var ipToRemove in _ckeyIpLink[ckey]
-			         .Where(ipDate => ipDate.Value >= DateTime.Now - TimeSpan.FromDays(1)))
-		{
-			await RemovePassesForIp(ipToRemove.Key);
-			_ckeyIpLink[ckey].Remove(ipToRemove.Key);
-		}
-	}
+	private IHubContext<IpTablesControllersHub, IIptablesControllersHub> IptablesHubContext { get; } = iptablesHubContext;
 
 	public void LinkIp(string ckey, IPAddress ip)
 	{
@@ -61,14 +40,16 @@ public sealed class IpPassService(IHubContext<IpTablesControllersHub> iptablesHu
 		{
 			_passesDictionary[clientIpAddress] = [];
 		}
+
 		_passesDictionary[clientIpAddress].Add(server);
-		await IptablesHubContext.Clients.All.SendAsync(nameof(IpTablesControllersHub.AddPassToPort), server.IpAddress, clientIpAddress, server.Port);
+
+		await IptablesHubContext.Clients.Group(server.IpTablesDaemonIpAddress).Event(new EventMessage(Action.Allow, clientIpAddress, server.Port));
 	}
 
 	private async Task RemovePassFromServer(IPAddress clientIpAddress, Server server)
 	{
 		_passesDictionary[clientIpAddress].Remove(server);
-		await IptablesHubContext.Clients.All.SendAsync(nameof(IpTablesControllersHub.RemovePassToPort), server.IpAddress, clientIpAddress, server.Port);
+		await IptablesHubContext.Clients.Group(server.IpTablesDaemonIpAddress).Event(new EventMessage(Action.Revoke, clientIpAddress, server.Port));
 	}
 
 	public async Task AddPassToServer(string clientCkey, Server server)
@@ -80,4 +61,27 @@ public sealed class IpPassService(IHubContext<IpTablesControllersHub> iptablesHu
 	{
 		foreach (var ip in await GetIps(clientCkey)) await RemovePassFromServer(ip, server);
 	}
+	private async Task RemovePassesForIp(IPAddress ip)
+	{
+		if (!_passesDictionary.TryGetValue(ip, out var servers))
+		{
+			return;
+		}
+
+		foreach (var server in servers)
+		{
+			await RemovePassFromServer(ip, server);
+		}
+	}
+
+	private async Task RemoveExpiredIps(string ckey)
+	{
+		foreach (var ipToRemove in _ckeyIpLink[ckey]
+			         .Where(ipDate => ipDate.Value < DateTime.Now - TimeSpan.FromDays(1)))
+		{
+			await RemovePassesForIp(ipToRemove.Key);
+			_ckeyIpLink[ckey].Remove(ipToRemove.Key);
+		}
+	}
+
 }

@@ -1,54 +1,53 @@
 using System.Net;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.SignalR;
+using Microsoft.Extensions.Logging;
 using QueueWebApplication.Core.Collections;
-using QueueWebApplication.Core.DTOs.Messages;
-using QueueWebApplication.Core.Entities;
-using Action = QueueWebApplication.Core.DTOs.Messages.Action;
+using QueueWebApplication.Core.Dtos.Messages;
+using QueueWebApplication.Core.Services;
+using Action = QueueWebApplication.Core.Dtos.Messages.Action;
 
 namespace QueueWebApplication.Core.Hubs;
 
-public sealed class IpTablesControllersHub : Hub
+public sealed class IpTablesControllersHub(ILogger<IpTablesControllersHub> logger) : Hub<IIptablesControllersHub>
 {
 	private static readonly ConnectionMapping<IPAddress> Connections = new();
+	public static IEnumerable<string> GetConnections(IPAddress serverIp) => Connections.GetConnections(serverIp);
 
-	public override Task OnConnectedAsync()
+	public override async Task OnConnectedAsync()
 	{
-		var feature = Context.Features.Get<IHttpConnectionFeature>();
-		if (feature?.RemoteIpAddress is null)
+		var ipAddress = Context.Features.Get<IHttpConnectionFeature>()?.RemoteIpAddress;
+
+		if (ipAddress is null)
 		{
-			return base.OnConnectedAsync();
+			logger.LogWarning("Connected without RemoteIpAddress");
+			await base.OnConnectedAsync();
+			return;
 		}
-		Connections.Add(feature.RemoteIpAddress, Context.ConnectionId);
-		return base.OnConnectedAsync();
+
+		await Groups.AddToGroupAsync(Context.ConnectionId, ipAddress.ToString());
+		await base.OnConnectedAsync();
 	}
 
-	public override Task OnDisconnectedAsync(Exception? exception)
+	public override async Task OnDisconnectedAsync(Exception? exception)
 	{
-		var feature = Context.Features.Get<IHttpConnectionFeature>();
-		if (feature?.RemoteIpAddress is null)
-		{
-			return base.OnDisconnectedAsync(exception);
-		}
-		Connections.Remove(feature.RemoteIpAddress, Context.ConnectionId);
-		return base.OnDisconnectedAsync(exception);
-	}
+		var ipAddress = Context.Features.Get<IHttpConnectionFeature>()?.RemoteIpAddress;
 
-	public async void AddPassToPort(IPAddress serverIp, IPAddress whom, int port)
-	{
-		foreach (var connection in Connections.GetConnections(serverIp))
+		if (ipAddress is null)
 		{
-			await Clients.Client(connection).SendAsync("event", new EventMessage(Action.Allow, whom, port));
+			logger.LogWarning("Disconnected without RemoteIpAddress");
+			await base.OnConnectedAsync();
+			return;
 		}
-	}
 
-	public async void RemovePassToPort(IPAddress serverIp, IPAddress whom, int port)
-	{
-		foreach (var connection in Connections.GetConnections(serverIp))
-		{
-			await Clients.Client(connection).SendAsync("event", new EventMessage(Action.Revoke, whom, port));
-		}
+		await Groups.RemoveFromGroupAsync(Context.ConnectionId, ipAddress.ToString());
+		await base.OnDisconnectedAsync(exception);
 	}
+}
+
+public interface IIptablesControllersHub
+{
+	Task Event(EventMessage message);
 }
 
 

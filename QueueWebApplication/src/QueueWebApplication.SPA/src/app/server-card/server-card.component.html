@@ -1,4 +1,16 @@
-<section>
-  <h1>Server {{server.ipAddress}} works. Online: {{server.currentPlayers}}/{{server.maximumPlayers}}</h1>
-  <button type="button">Connect</button>
-</section>
+<div class="server-card" [ngClass]="{'whitelist-server' : server().whitelisted}">
+  <h1>Server {{server().name}}<br>Online: {{server().currentPlayers}}/{{server().maximumPlayers | numberOrInfinity}}</h1>
+  <div class="container">
+    @switch (queueState)  {
+      @case (QueueState.NotInQueue) {
+        <button class="btn-join-to-queue" type="button" [disabled]="disabled$ | async" (click)="connectToQueue()">{{server().currentPlayers < server().maximumPlayers ? 'Play' : 'Queue'}}</button>
+      }
+      @case (QueueState.InQueue) {
+        <button class="btn-in-queue" type="button">You are {{queuePosition$ | async}} in queue</button>
+      }
+      @case (QueueState.AllowedToConnect) {
+        <a href="{{serverUrl}}"><button class="btn-join-to-game" type="button">Play</button></a>
+      }
+    }
+  </div>
+</div>

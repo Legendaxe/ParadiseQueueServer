@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace QueueWebApplication.Core.DTOs;
+namespace QueueWebApplication.Core.Dtos;
 
 public record WaitingClientDto
 {

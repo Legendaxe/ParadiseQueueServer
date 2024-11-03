@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace QueueWebApplication.Core.DTOs;
+namespace QueueWebApplication.Core.Dtos;
 
 public record PlayerDto(
 	string Ckey,

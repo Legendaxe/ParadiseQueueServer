@@ -2,7 +2,7 @@ using System.Net;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace QueueWebApplication.Core.DTOs.Messages;
+namespace QueueWebApplication.Core.Dtos.Messages;
 
 public record InitialMessage(Dictionary<int, IPAddress> Accepts)
 {

@@ -1,4 +1,14 @@
 <section class="servers-lobby">
-  <app-server-card *ngFor="let server of servers" [server]="server"/>
+  @if (haveToken){
+    <div class="server-cards">
+      @for (server of servers(); track server.name) {
+        <app-server-card class="server-card" [server]="server" [playerData]="playerData" />
+      } @empty {
+        Backend is not available now...
+      }
+    </div>
+  } @else {
+    This site is available only trough our byond queue server
+  }
 </section>
 

@@ -27,8 +27,17 @@ public sealed class PlayersDictionariesService : IPlayersDictionariesService
 		return playersDictionary;
 	}
 
-	public async Task UpdateAllPlayersDictionaries()
-		=> await Task.WhenAll(_playersDictionaries.Keys.Select(UpdatePlayersDictionary));
+	public void AddPlayerFromQueue(string ckey, string serverName)
+	{
+		if (!_playersDictionaries.TryGetValue(serverName, out var playersDictionary))
+		{
+			throw new KeyNotFoundException();
+		}
+		playersDictionary[ckey] = DateTime.Now;
+	}
+
+	public Task UpdateAllPlayersDictionaries()
+		=> Task.WhenAll(_playersDictionaries.Keys.Select(UpdatePlayersDictionary));
 
 
 	private async Task UpdatePlayersDictionary(string serverName)

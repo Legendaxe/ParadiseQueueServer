@@ -1,4 +1,4 @@
-﻿using QueueWebApplication.Core.DTOs;
+﻿using QueueWebApplication.Core.Dtos;
 
 namespace QueueWebApplication.Core.Interfaces.Services;
 

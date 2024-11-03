@@ -3,7 +3,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using Byond.TopicSender;
 using Microsoft.Extensions.Logging;
-using QueueWebApplication.Core.DTOs;
+using QueueWebApplication.Core.Dtos;
 using QueueWebApplication.Core.Entities;
 using QueueWebApplication.Core.Interfaces.Services;
 
@@ -13,28 +13,6 @@ public sealed class ByondApiService(ILogger<ByondApiService> logger, ITopicClien
 {
 	private readonly ITopicClient _byondTopicSender = topicClientFactory.
 		CreateTopicClient(TimeSpan.FromMilliseconds(5000));
-
-
-	private async ValueTask<TopicResponse?> SendTopicRequest(string commandString,
-		Server server, CancellationToken cancellationToken = default)
-	{
-		try
-		{
-			var byondResponse = await _byondTopicSender.SendTopic(
-				server.IpAddress,
-				commandString,
-				server.Port,
-				cancellationToken);
-			return byondResponse;
-		}
-		catch (Exception e) when (e is not OperationCanceledException)
-		{
-			logger.LogWarning("SendTopic exception! {Ip}:{Port}", server.IpAddress, server.Port);
-		}
-
-		return null;
-	}
-
 
 	public async ValueTask<bool> IsClientAllowedToServer(WaitingClientDto clientDto, Server server, CancellationToken cancellationToken = default)
 	{
@@ -60,6 +38,18 @@ public sealed class ByondApiService(ILogger<ByondApiService> logger, ITopicClien
 		return server.MaximumPlayers - (int) response.FloatData;
 	}
 
+	public async ValueTask<int> CurrentPlayersOnServer(Server server, CancellationToken cancellationToken = default)
+	{
+		var response = await SendTopicRequest("ping", server, cancellationToken);
+
+		if (response?.FloatData is null)
+		{
+			return 0;
+		}
+
+		return (int) response.FloatData;
+	}
+
 	public async ValueTask<IEnumerable<string>> GetPlayersList(Server server,
 		CancellationToken cancellationToken = default)
 	{
@@ -69,5 +59,23 @@ public sealed class ByondApiService(ILogger<ByondApiService> logger, ITopicClien
 			return [];
 		}
 		return JsonSerializer.Deserialize<IEnumerable<string>>(response.StringData) ?? [];
+	}
+	private async ValueTask<TopicResponse?> SendTopicRequest(string commandString,
+		Server server, CancellationToken cancellationToken = default)
+	{
+		try
+		{
+			var byondResponse = await _byondTopicSender.SendTopic(
+				server.IpAddress,
+				commandString,
+				server.Port,
+				cancellationToken);
+			return byondResponse;
+		}
+		catch
+		{
+			logger.LogWarning("SendTopic exception! {Ip}:{Port}", server.IpAddress, server.Port);
+			return null;
+		}
 	}
 }
