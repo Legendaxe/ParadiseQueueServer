@@ -6,6 +6,6 @@ import { ServersLobbyComponent } from '../servers-lobby/servers-lobby.component'
   standalone: true,
   imports: [ServersLobbyComponent],
   templateUrl: './queue-page.component.html',
-  styleUrl: './queue-page.component.css',
+  styleUrl: './queue-page.component.scss',
 })
 export class QueuePageComponent {}

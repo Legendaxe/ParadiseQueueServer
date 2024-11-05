@@ -14,7 +14,7 @@ import { MockServersServiceService } from '../services/mock-servers-service.serv
   standalone: true,
   imports: [ServerCardComponent, NgFor],
   templateUrl: './servers-lobby.component.html',
-  styleUrl: './servers-lobby.component.css',
+  styleUrl: './servers-lobby.component.scss',
 })
 export class ServersLobbyComponent {
   servers = signal<Array<Server>>([]);

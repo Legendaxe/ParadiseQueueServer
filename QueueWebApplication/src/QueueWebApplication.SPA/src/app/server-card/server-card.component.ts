@@ -14,7 +14,7 @@ import { NumberOrInfinityPipe } from '../pipes/number-or-infinity.pipe';
   standalone: true,
   imports: [AsyncPipe, NgClass, NumberOrInfinityPipe],
   templateUrl: './server-card.component.html',
-  styleUrl: './server-card.component.css',
+  styleUrl: './server-card.component.scss',
 })
 export class ServerCardComponent implements OnInit {
   server = input.required<Server>();

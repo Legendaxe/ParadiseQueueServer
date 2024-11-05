@@ -2,9 +2,9 @@
   "printWidth": 120,
   "overrides": [
     {
-      "files": "*.less, *.css",
+      "files": "*.scss",
       "options": {
-        "parser": "less",
+        "parser": "scss",
         "singleQuote": true
       }
     }
