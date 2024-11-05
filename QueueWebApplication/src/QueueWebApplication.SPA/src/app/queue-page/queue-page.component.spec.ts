@@ -8,9 +8,8 @@ describe('QueuePageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [QueuePageComponent]
-    })
-    .compileComponents();
+      imports: [QueuePageComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(QueuePageComponent);
     component = fixture.componentInstance;

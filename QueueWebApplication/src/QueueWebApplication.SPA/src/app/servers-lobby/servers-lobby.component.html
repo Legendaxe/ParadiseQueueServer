@@ -1,5 +1,5 @@
 <section class="servers-lobby">
-  @if (haveToken){
+  @if (haveToken) {
     <div class="server-cards">
       @for (server of servers(); track server.name) {
         <app-server-card class="server-card" [server]="server" [playerData]="playerData" />
@@ -11,4 +11,3 @@
     This site is available only trough our byond queue server
   }
 </section>
-
