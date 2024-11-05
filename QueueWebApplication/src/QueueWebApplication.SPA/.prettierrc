@@ -7,6 +7,13 @@
         "parser": "scss",
         "singleQuote": true
       }
+    },
+    {
+      "files": "*.html",
+      "options": {
+        "parser": "angular",
+        "bracketSameLine": true
+      }
     }
   ]
 }
