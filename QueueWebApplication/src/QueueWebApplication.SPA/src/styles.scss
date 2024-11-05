@@ -1,4 +1,149 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  /* Base Colors */
+  --color-bg: hsl(0, 0%, 15%);
+  --color-bg-hover: rgba(255, 255, 255, 0.075);
+  --color-bg-focus: rgba(255, 255, 255, 0.125);
+
+  --color-base: rgba(0, 0, 0, 0.33);
+
+  --color-text: rgba(255, 255, 255, 1);
+  --color-text-darker: rgba(220, 220, 220, 1);
+  --color-text-translucent: rgba(255, 255, 255, 0.5);
+  --color-text-semi-translucent: rgba(255, 255, 255, 0.75);
+
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-border-input: hsla(var(--primary-hue), 100%, calc(var(--primary-lightness) + 25%), 0.5);
+  --color-border-input-focus: hsl(var(--primary-hue), 100%, calc(var(--primary-lightness) + 15%));
+
+  /* Scrollbar */
+  --color-scrollbar-base: hsl(0, 0%, 10%);
+  --color-scrollbar-thumb: hsl(0, 0%, 20%);
+
+  /* Notices */
+  --color-notice: hsl(0, 0%, 40%);
+  --color-notice-red: hsl(0, 38%, 33%);
+  --color-notice-green: hsl(110, 38%, 33%);
+  --color-notice-blue: hsl(206, 58%, 32%);
+  --color-notice-brown: hsl(34, 38%, 33%);
+
+  /* Links */
+  --color-hyperlink: hsl(220, 100%, 70%);
+  --color-hyperlink-visited: hsl(260, 100%, 70%);
+  /* Hover */
+  --color-hyperlink-hover: hsl(210, 100%, 75%);
+  --color-hyperlink-visited-hover: hsl(270, 100%, 75%);
+
+  /* Custom HSL */
+  --primary-lightness: 45%;
+  --dark-lightness: 95%;
+  --light-lightness: 15%;
+
+  /* Shadows */
+  --box-shadow-small: 0px 15px 20px 0px rgba(0, 0, 0, 0.75);
+  --box-shadow-medium: 0px 25px 30px 5px rgba(0, 0, 0, 0.75);
+  --box-shadow-big: 0px 0px 35px 5px rgba(0, 0, 0, 0.75);
+
+  /* Background Image */
+  --nt-image: url(./assets/images/bg-nanotrasen.svg);
+}
+
+:root {
+  --primary-hue: 210;
+
+  /* TGUI Elements Colors */
+  --color-primary: hsl(var(--primary-hue), 37.5%, var(--primary-lightness));
+  --color-secondary: hsl(var(--primary-hue), 57.5%, 50%);
+  --color-red: hsl(0, 70%, 50%);
+  --color-orange: hsl(40, 90%, 40%);
+  --color-yellow: hsl(50, 95%, 40%);
+  --color-olive: hsl(70, 80%, 45%);
+  --color-green: hsl(95, 65%, 40%);
+  --color-teal: hsl(175, 100%, 35%);
+  --color-blue: hsl(205, 70%, 45%);
+  --color-violet: hsl(260, 60%, 50%);
+  --color-purple: hsl(285, 60%, 50%);
+  --color-pink: hsl(325, 75%, 55%);
+  --color-brown: hsl(25, 45%, 45%);
+  --color-label: hsl(215, 20%, 55%);
+  --color-gray: hsl(0, 0%, 45%);
+  --color-black: hsl(0, 0%, 0%);
+  --color-white: hsl(0, 0%, 100%);
+
+  /* TGUI Elements Colors (Light or Hover) */
+  --color-primary-light: hsl(var(--primary-hue), 32.5%, calc(var(--primary-lightness) + 10%));
+  --color-secondary-light: hsl(var(--primary-hue), 100%, 60%);
+  --color-red-light: hsl(0, 85%, 65%);
+  --color-orange-light: hsl(40, 100%, 45%);
+  --color-yellow-light: hsl(50, 100%, 45%);
+  --color-olive-light: hsl(70, 80%, 55%);
+  --color-green-light: hsl(95, 65%, 50%);
+  --color-teal-light: hsl(175, 100%, 45%);
+  --color-blue-light: hsl(205, 100%, 65%);
+  --color-violet-light: hsl(260, 100%, 65%);
+  --color-purple-light: hsl(285, 100%, 65%);
+  --color-pink-light: hsl(325, 100%, 65%);
+  --color-brown-light: hsl(25, 45%, 55%);
+  --color-label-light: hsl(215, 30%, 70%);
+  --color-grey-light: hsl(0, 0%, 55%);
+  --color-black-light: hsl(0, 0%, 15%);
+  --color-white-light: hsl(0, 0%, 85%);
+
+  /* TGUI Elements Colors (Darken orFocus/Active) */
+  --color-primary-dark: hsl(var(--primary-hue), 40%, calc(var(--primary-lightness) - 5%));
+  --color-secondary-dark: hsl(var(--primary-hue), 70%, 40%);
+  --color-red-dark: hsl(0, 70%, 45%);
+  --color-orange-dark: hsl(40, 90%, 35%);
+  --color-yellow-dark: hsl(50, 95%, 35%);
+  --color-olive-dark: hsl(70, 80%, 40%);
+  --color-green-dark: hsl(95, 65%, 35%);
+  --color-teal-dark: hsl(175, 100%, 30%);
+  --color-blue-dark: hsl(205, 100%, 35%);
+  --color-violet-dark: hsl(260, 60%, 45%);
+  --color-purple-dark: hsl(285, 60%, 45%);
+  --color-pink-dark: hsl(325, 75%, 50%);
+  --color-brown-dark: hsl(25, 45%, 40%);
+  --color-label-dark: hsl(215, 20%, 50%);
+  --color-grey-dark: hsl(0, 0%, 40%);
+  --color-white-dark: hsl(0, 0%, 75%);
+
+  /* Border Radius */
+  --border-radius-small: 0.275rem;
+  --border-radius-medium: calc(var(--border-radius-small) * 2);
+  --border-radius-large: calc(var(--border-radius-small) * 4);
+  --border-radius-round: 9999px;
+
+  /* Blur */
+  --blur-default: saturate(150%) blur(24px);
+  --blur-important: saturate(150%) blur(24px);
+
+  /* Transition */
+  --transition-time: 0.2s;
+  --transition-time-fast: calc(var(--transition-time) / 2);
+  --transition-delay: calc(var(--transition-time) * 2);
+
+  /* Shortcuts */
+  --border-classic: 1px solid var(--color-border);
+  --border-classic-input: 1px solid var(--color-border-input);
+  --border-classic-input-focus: 1px solid var(--color-border-input-focus);
+}
+
+body,
+html {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  font-size: 16px;
+  font-family: sans-serif;
+  color: var(--color-text-darker);
+  scrollbar-color: var(--color-scrollbar-thumb) var(--color-scrollbar-base);
+}
+
 body {
-  background: lightslategrey;
+  background-color: var(--color-bg);
+  background-image: var(--nt-image);
+  background-size: 40%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
 }

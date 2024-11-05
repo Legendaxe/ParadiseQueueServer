@@ -1,12 +1,9 @@
-.server-cards {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding-bottom: 100px;
+.servers-lobby {
+  padding: 0.5rem;
 }
-
-.server-card {
-  flex: 1;
+.server-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0.5rem;
 }
