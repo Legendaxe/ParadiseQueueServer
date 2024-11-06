@@ -1,0 +1,23 @@
+.servers-lobby {
+  padding: 0.5rem;
+
+  &.notAvailable {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-weight: bold;
+    user-select: none;
+  }
+}
+
+.server-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0.5rem;
+}

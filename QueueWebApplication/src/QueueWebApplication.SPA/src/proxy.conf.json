@@ -8,7 +8,7 @@
   "/queue/add-client": {
     "target": "https://localhost:7000",
     "secure": false,
-    "changeOrigin" : true,
+    "changeOrigin": true,
     "logLevel": "debug"
   }
 }

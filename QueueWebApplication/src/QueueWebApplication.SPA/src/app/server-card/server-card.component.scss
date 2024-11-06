@@ -1,0 +1,86 @@
+@mixin button-color($color) {
+  background-color: var(--color-#{$color});
+
+  &:hover {
+    background-color: var(--color-#{$color}-light);
+  }
+
+  &:active {
+    background-color: var(--color-#{$color}-dark);
+    box-shadow: inset 0 0 0.1em 0.1em rgba(0, 0, 0, 0.2);
+  }
+}
+
+.server-card {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: var(--color-base);
+
+  &__name {
+    font-weight: bold;
+    padding: 0.5rem 0.5rem calc(0.5rem - 2px);
+    border-bottom: 2px solid var(--color-primary);
+
+    .whitelist-server & {
+      border-color: var(--color-orange);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 0.66em 0.5em;
+
+    &-info {
+      flex: 1;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  button {
+    &.queue {
+      @include button-color('violet');
+
+      &-join {
+        @include button-color('primary');
+      }
+    }
+  }
+
+  &.whitelist-server button {
+    @include button-color('orange');
+
+    &.queue {
+      @include button-color('violet');
+    }
+  }
+}
+
+button {
+  cursor: pointer;
+  appearance: none;
+  outline: none;
+  border: 0;
+  width: 100%;
+  height: 2em;
+  color: var(--color-white);
+  border-radius: var(--border-radius-small);
+  transition:
+    background-color var(--transition-time),
+    box-shadow var(--transition-time);
+  @include button-color('green');
+
+  &[disabled] {
+    cursor: not-allowed !important;
+    background-color: var(--color-gray) !important;
+    color: var(--color-text-translucent) !important;
+    box-shadow: none !important;
+  }
+}
+
+a {
+  -webkit-user-drag: none;
+}
