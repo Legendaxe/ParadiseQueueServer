@@ -1,18 +1,17 @@
 import { Component, computed, input, OnInit } from '@angular/core';
-import { Server } from '../interfaces/server';
-import { QueueState } from '../enums/queue-state';
-import { HttpClient } from '@angular/common/http';
 import { takeUntilDestroyed, toObservable } from '@angular/core/rxjs-interop';
-import { AsyncPipe, NgClass } from '@angular/common';
+import { AsyncPipe, NgClass, NgIf } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import { Server } from '../interfaces/server';
 import { PlayerData } from '../interfaces/player-data';
-import { firstValueFrom } from 'rxjs';
+import { QueueState } from '../enums/queue-state';
 import { QueueResponse } from '../enums/queue-response';
-import { NumberOrInfinityPipe } from '../pipes/number-or-infinity.pipe';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-server-card',
   standalone: true,
-  imports: [AsyncPipe, NgClass, NumberOrInfinityPipe],
+  imports: [AsyncPipe, NgClass, NgIf],
   templateUrl: './server-card.component.html',
   styleUrl: './server-card.component.scss',
 })

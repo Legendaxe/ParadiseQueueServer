@@ -3,7 +3,9 @@
   <div class="server-card__content">
     <div class="server-card__content-info">
       <div class="server-card__info-online">
-        Онлайн: {{ server().currentPlayers }} / {{ server().maximumPlayers | numberOrInfinity }}
+        Онлайн: {{ server().currentPlayers }} /
+        <i *ngIf="server().maximumPlayers === -1" class="fas fa-infinity"></i>
+        <span *ngIf="server().maximumPlayers !== -1">{{ server().maximumPlayers }}</span>
       </div>
     </div>
     <div class="server-card__content-buttons">
@@ -14,11 +16,13 @@
           </button>
         }
         @case (QueueState.InQueue) {
-          <button class="queue" type="button">Вы {{ queuePosition$ | async }}й в очереди</button>
+          <button class="queue" type="button" [disabled]="disabled$ | async">
+            Вы {{ queuePosition$ | async }}й в очереди
+          </button>
         }
         @case (QueueState.AllowedToConnect) {
           <a href="{{ serverUrl }}">
-            <button class="join" type="button">Играть</button>
+            <button class="join" type="button" [disabled]="disabled$ | async">Играть</button>
           </a>
         }
       }

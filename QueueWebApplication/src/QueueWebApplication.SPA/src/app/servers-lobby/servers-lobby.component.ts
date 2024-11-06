@@ -1,6 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { NgFor } from '@angular/common';
-import { ServersServiceService } from '../services/servers-service.service';
+import { NgFor, NgClass } from '@angular/common';
 import { Server } from '../interfaces/server';
 import { ServerCardComponent } from '../server-card/server-card.component';
 import { map, take, toArray, zip } from 'rxjs';
@@ -12,7 +11,7 @@ import { MockServersServiceService } from '../services/mock-servers-service.serv
 @Component({
   selector: 'app-servers-lobby',
   standalone: true,
-  imports: [ServerCardComponent, NgFor],
+  imports: [ServerCardComponent, NgFor, NgClass],
   templateUrl: './servers-lobby.component.html',
   styleUrl: './servers-lobby.component.scss',
 })

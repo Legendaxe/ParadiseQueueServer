@@ -1,4 +1,4 @@
-<section class="servers-lobby">
+<section class="servers-lobby" [ngClass]="{ notAvailable: !haveToken }">
   @if (haveToken) {
     <div class="server-cards">
       @for (server of servers(); track server.name) {
