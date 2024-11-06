@@ -4,8 +4,8 @@
     <div class="server-card__content-info">
       <div class="server-card__info-online">
         Онлайн: {{ server().currentPlayers }} /
-        <i *ngIf="server().maximumPlayers === -1" class="fas fa-infinity"></i>
-        <span *ngIf="server().maximumPlayers !== -1">{{ server().maximumPlayers }}</span>
+        <i *ngIf="server().maximumPlayers === -1; else maxPlayers" class="fas fa-infinity"></i>
+        <ng-template #maxPlayers>{{ server().maximumPlayers }}</ng-template>
       </div>
     </div>
     <div class="server-card__content-buttons">
