@@ -1,20 +1,19 @@
 import { Injectable } from '@angular/core';
-import {Server} from "../interfaces/server";
-import {environment} from "../../environments/environment";
-import * as signalR from '@microsoft/signalr'
-import {Observable, Subject} from "rxjs";
-import {QueuePosition} from "../interfaces/queue-position";
-import {ServerStatus} from "../interfaces/server-status";
+import { Server } from '../interfaces/server';
+import { environment } from '../../environments/environment';
+import * as signalR from '@microsoft/signalr';
+import { Observable, Subject } from 'rxjs';
+import { QueuePosition } from '../interfaces/queue-position';
+import { ServerStatus } from '../interfaces/server-status';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class ServersServiceService{
+export class ServersServiceService {
   private hubConnection?: signalR.HubConnection;
   private pendingServersSubject = new Subject<Server[]>();
   private pendingServersStatusSubject = new Subject<ServerStatus[]>();
   private pendingQueuePositionSubject = new Subject<QueuePosition>();
-
 
   serversUpdated$: Observable<Server[]> = this.pendingServersSubject.asObservable();
   serversStatusUpdated$: Observable<ServerStatus[]> = this.pendingServersStatusSubject.asObservable();
@@ -36,8 +35,8 @@ export class ServersServiceService{
     this.hubConnection
       .start()
       .then(() => console.log('Connected to SignalR hub'))
-      .catch(err => {
-        console.error('Error connecting to SignalR hub:', err)
+      .catch((err) => {
+        console.error('Error connecting to SignalR hub:', err);
         throw err;
       });
 
@@ -47,10 +46,9 @@ export class ServersServiceService{
     this.hubConnection.on('PendingServersStatusData', (serversStatus: Server[]) => {
       this.pendingServersStatusSubject.next(serversStatus);
     });
-    this.hubConnection.on('PendingQueuePosition', (queuePosition: QueuePosition)=> {
+    this.hubConnection.on('PendingQueuePosition', (queuePosition: QueuePosition) => {
       this.pendingQueuePositionSubject.next(queuePosition);
     });
     return false;
   }
-
 }

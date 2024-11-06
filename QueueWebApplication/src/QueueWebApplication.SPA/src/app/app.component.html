@@ -1,14 +1,12 @@
 <main>
-  <a [routerLink]="['/']">
-    <header class="brand-name">
+  <div class="Window">
+    <header class="header">
+      <img class="header__icon" src="../assets/images/logo.png" />
+      <span class="header__title">SS220</span>
     </header>
-  </a>
-  <section class="content">
-    <router-outlet></router-outlet>
-  </section>
-  <section class="footer">
-    <footer>
-      © SS220 team
-    </footer>
-  </section>
+    <section class="content">
+      <router-outlet></router-outlet>
+    </section>
+    <footer class="footer">©️ SS220 Team</footer>
+  </div>
 </main>

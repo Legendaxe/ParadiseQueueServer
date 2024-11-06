@@ -1,16 +1,31 @@
-<div class="server-card" [ngClass]="{'whitelist-server' : server().whitelisted}">
-  <h1>Server {{server().name}}<br>Online: {{server().currentPlayers}}/{{server().maximumPlayers | numberOrInfinity}}</h1>
-  <div class="container">
-    @switch (queueState)  {
-      @case (QueueState.NotInQueue) {
-        <button class="btn-join-to-queue" type="button" [disabled]="disabled$ | async" (click)="connectToQueue()">{{server().currentPlayers < server().maximumPlayers ? 'Play' : 'Queue'}}</button>
+<div class="server-card" [ngClass]="{ 'whitelist-server': server().whitelisted }">
+  <div class="server-card__name">{{ server().name }}</div>
+  <div class="server-card__content">
+    <div class="server-card__content-info">
+      <div class="server-card__info-online">
+        Онлайн: {{ server().currentPlayers }} /
+        <i *ngIf="server().maximumPlayers === -1; else maxPlayers" class="fas fa-infinity"></i>
+        <ng-template #maxPlayers>{{ server().maximumPlayers }}</ng-template>
+      </div>
+    </div>
+    <div class="server-card__content-buttons">
+      @switch (queueState) {
+        @case (QueueState.NotInQueue) {
+          <button class="queue-join" type="button" [disabled]="disabled$ | async" (click)="connectToQueue()">
+            {{ server().currentPlayers < server().maximumPlayers ? "Играть" : "В очередь" }}
+          </button>
+        }
+        @case (QueueState.InQueue) {
+          <button class="queue" type="button" [disabled]="disabled$ | async">
+            Вы {{ queuePosition$ | async }}й в очереди
+          </button>
+        }
+        @case (QueueState.AllowedToConnect) {
+          <a href="{{ serverUrl }}">
+            <button class="join" type="button" [disabled]="disabled$ | async">Играть</button>
+          </a>
+        }
       }
-      @case (QueueState.InQueue) {
-        <button class="btn-in-queue" type="button">You are {{queuePosition$ | async}} in queue</button>
-      }
-      @case (QueueState.AllowedToConnect) {
-        <a href="{{serverUrl}}"><button class="btn-join-to-game" type="button">Play</button></a>
-      }
-    }
+    </div>
   </div>
 </div>
