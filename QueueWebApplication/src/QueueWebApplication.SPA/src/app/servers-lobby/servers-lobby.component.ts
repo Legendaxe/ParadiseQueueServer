@@ -6,7 +6,7 @@ import { map, take, toArray, zip } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { PlayerData } from '../interfaces/player-data';
 import { PlayerJwt } from '../interfaces/player-jwt';
-import { MockServersServiceService } from '../services/mock-servers-service.service';
+import { ServersServiceService } from "../services/servers-service.service";
 
 @Component({
   selector: 'app-servers-lobby',
@@ -19,7 +19,7 @@ export class ServersLobbyComponent {
   servers = signal<Array<Server>>([]);
   haveToken = false;
   playerData: PlayerData = { ckey: '', role: '', donatorTier: 0, banned: false, whitelistPasses: [] };
-  constructor(private serversService: MockServersServiceService) {
+  constructor(private serversService: ServersServiceService) {
     let token = window.location.hash.split('#token=').pop() ?? '';
     if (!token) {
       return;
@@ -29,6 +29,7 @@ export class ServersLobbyComponent {
 
     sessionStorage.setItem('token', token);
     this.haveToken = true;
+    this.serversService.connect();
     this.serversService.serversUpdated$.pipe(take(1)).subscribe((servers) => {
       this.servers.set(
         servers.map((server) => {
@@ -61,7 +62,6 @@ export class ServersLobbyComponent {
         });
       });
     });
-    this.serversService.connect();
   }
 
   private parsePlayerData(data: PlayerJwt): PlayerData {
