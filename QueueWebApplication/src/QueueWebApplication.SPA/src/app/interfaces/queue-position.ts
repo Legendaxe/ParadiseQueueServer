@@ -1,4 +1,4 @@
 export interface QueuePosition {
-  serverName: string,
-  position: number,
+  serverName: string;
+  position: number;
 }

@@ -1,5 +1,6 @@
 export enum QueueState {
   NotInQueue,
   InQueue,
-  AllowedToConnect
+  AllowedToConnect,
+  Banned,
 }
