@@ -67,6 +67,14 @@ services.AddAuthentication(options =>
 services.AddAuthorizationBuilder()
 	.AddPolicy("IpWhitelistPolicy", policy => policy.Requirements.Add(new IpCheckRequirement { IpClaimRequired = true }));
 
+services.AddCors(options =>
+{
+	options.AddDefaultPolicy(
+		policy =>
+		{
+			policy.WithOrigins(builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>()!);
+		});
+});
 services.AddLogging();
 services.AddEndpointsApiExplorer();
 services.AddDistributedMemoryCache();
@@ -90,15 +98,16 @@ services.AddHostedService<FetchPlayersBackgroundService>();
 
 var app = builder.Build();
 
+app.UseHttpsRedirection();
 app.UseForwardedHeaders();
 app.UseAuthentication();
 app.UseMiddleware<IpSafeListMiddleware>();
+
 app.UseAuthorization();
-app.UseHttpsRedirection();
 
-if (app.Environment.IsDevelopment())
+if (!app.Environment.IsDevelopment())
 {
-
+	app.UseCors();
 }
 
 var apiGroup = app.MapGroup("/api");
