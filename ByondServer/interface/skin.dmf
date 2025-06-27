@@ -2,8 +2,8 @@
 window "default"
 	elem "default"
 		type = MAIN
-		pos = 372,0
-		size = 768x256
+		pos = 382,0
+		size = 700x400
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		background-color = #000000
@@ -14,38 +14,17 @@ window "default"
 		statusbar = false
 		can-minimize = false
 		can-resize = false
-		outer-size = 784x295
-		inner-size = 768x256
-	elem "mainoutput"
-		type = OUTPUT
+		outer-size = 716x439
+		outer-pos = 382,0
+		inner-size = 700x400
+		inner-pos = 8,31
+		screen-size = 1920x1040
+	elem "browser1"
+		type = BROWSER
 		pos = 0,0
-		size = 768x216
-		anchor1 = -1,-1
-		anchor2 = -1,-1
-		font-family = "Verdana"
-		text-color = #ffffff
-		background-color = #000000
-		saved-params = "max-lines"
-	elem "label1"
-		type = LABEL
-		pos = 0,208
-		size = 768x48
-		anchor1 = -1,-1
-		anchor2 = -1,-1
-		text-color = #777777
+		size = 700x400
+		anchor1 = 0,0
+		anchor2 = 100,100
 		background-color = none
 		saved-params = ""
-		text = ""
-	elem "input1"
-		type = INPUT
-		pos = 6,213
-		size = 758x40
-		anchor1 = -1,-1
-		anchor2 = -1,-1
-		text-color = #ffff66
-		background-color = #080808
-		is-default = true
-		border = line
-		saved-params = ""
-		command = "say"
 

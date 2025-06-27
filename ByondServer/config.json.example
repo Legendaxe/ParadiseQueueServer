@@ -2,8 +2,11 @@
 	"supported_servers": [
 		"127.0.0.1:0"
 	],
+	"proxy_addresses" : [
+		"192.168.1.52"
+	],
 	"gameserver_addr": "10.0.0.30:6666",
 	"gameserver_commskey": "please_use_something_secure_in_production",
-	"frontend_url" : "http://localhost:1234",
-	"backend_url" : "http://localhost:1235"
+	"frontend_url" : "http://localhost:4200",
+	"backend_url" : "http://localhost:7000"
 }

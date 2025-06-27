@@ -43,6 +43,8 @@
 	for(var/server in config["supported_servers"])
 		GLOB.supported_servers += server
 		GLOB.server_queues += list("[server]" = list())
+	for(var/ip in config["proxy_addresses"])
+		GLOB.proxy_addresses += ip
 	GLOB.gameserver_commskey = config["gameserver_commskey"]
 	GLOB.frontend_url = config["frontend_url"]
 	GLOB.backend_url = config["backend_url"]
@@ -51,17 +53,6 @@
 /proc/start_tickloop()
 	// This has a selfcontained loop. Do not wait.
 	set waitfor = FALSE
-
 	while(TRUE)
-		world.log << "goal"
-		for(var/address in GLOB.server_queues)
-
-			var/list/queue = GLOB.server_queues[address]
-
-			for(var/client/client in queue)
-				var/client_position = queue.Find(client)
-				if(client_position != client.last_queue_pos)
-					client.to_chat(QUEUETEXT("Сейчас вы <b>[client_position]-ый</b> из <b>[length(queue)] клиентов</b>"))
-					client.last_queue_pos = client_position
-				sleep(3)
-		sleep(100)
+		GLOB.SShttp.fire()
+		sleep(5)

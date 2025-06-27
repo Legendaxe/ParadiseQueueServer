@@ -1,0 +1,194 @@
+[2024-11-10T10:50:58] BEGIN ASYNC REQUEST (ID: 0)
+[2024-11-10T10:50:58] 	POST http://localhost:7000/api/lobby-connect
+[2024-11-10T10:50:58] 	Request body: {"ckey":"legendaxe","ip":"127.0.0.1"}
+[2024-11-10T10:50:58] 	Request headers: {"Content-Type":"Application/Json"}
+[2024-11-10T10:50:58] END ASYNC REQUEST (ID: 0)
+[2024-11-10T10:54:50] BEGIN ASYNC REQUEST (ID: 0)
+[2024-11-10T10:54:50] 	POST http://localhost:7000/api/lobby-connect
+[2024-11-10T10:54:50] 	Request body: {"ckey":"legendaxe","ip":"127.0.0.1"}
+[2024-11-10T10:54:50] 	Request headers: {"Content-Type":"Application/Json"}
+[2024-11-10T10:54:50] END ASYNC REQUEST (ID: 0)
+[2024-11-10T10:55:39] BEGIN ASYNC REQUEST (ID: 0)
+[2024-11-10T10:55:39] 	POST http://localhost:7000/api/lobby-connect
+[2024-11-10T10:55:39] 	Request body: {"ckey":"legendaxe","ip":"127.0.0.1"}
+[2024-11-10T10:55:39] 	Request headers: {"Content-Type":"Application/Json"}
+[2024-11-10T10:55:39] END ASYNC REQUEST (ID: 0)
+[2024-11-10T10:56:11] BEGIN ASYNC REQUEST (ID: 0)
+[2024-11-10T10:56:11] 	POST http://localhost:7000/api/lobby-connect
+[2024-11-10T10:56:11] 	Request body: {"ckey":"legendaxe","ip":"127.0.0.1"}
+[2024-11-10T10:56:11] 	Request headers: {"Content-Type":"Application/Json"}
+[2024-11-10T10:56:11] END ASYNC REQUEST (ID: 0)
+[2024-11-10T10:56:11] BEGIN ASYNC RESPONSE (ID: 0)
+[2024-11-10T10:56:11] 	Response status code: 200
+[2024-11-10T10:56:11] 	Response body: "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJsZWdlbmRheGUiLCJyb2xlIjoi0JLQtdC00YPRidC40Lkg0KDQsNC30YDQsNCx0L7RgtGH0LjQuiIsImRvblRpZXIiOjAsImJhbiI6ZmFsc2UsIndsIjpbNDAwMV0sIm5iZiI6MTczMTIzNjE3MSwiZXhwIjoxNzMxMjM3OTcxLCJpYXQiOjE3MzEyMzYxNzEsImlzcyI6Imh0dHBzOi8vc3MyMjAuY2x1YiIsImF1ZCI6Imh0dHBzOi8vc3MyMjAuY2x1YiJ9.dKHUZQZz6lvN8qew7ohnai7QQFWfnH4AsMa6pIOy2AfVIQ_Qgyu6vfoCZcmvyAjQ4t_iezmA8WXaILu5P51uNw"
+[2024-11-10T10:56:11] 	Response headers: {"date":"Sun, 10 Nov 2024 10:56:11 GMT","content-type":"application/json; charset=utf-8","server":"Kestrel","transfer-encoding":"chunked"}
+[2024-11-10T10:56:11] END ASYNC RESPONSE (ID: 0)
+[2024-11-10T10:59:13] BEGIN ASYNC REQUEST (ID: 0)
+[2024-11-10T10:59:13] 	POST http://localhost:7000/api/lobby-connect
+[2024-11-10T10:59:13] 	Request body: {"ckey":"legendaxe","ip":"127.0.0.1"}
+[2024-11-10T10:59:13] 	Request headers: {"Content-Type":"Application/Json"}
+[2024-11-10T10:59:13] END ASYNC REQUEST (ID: 0)
+[2024-11-10T10:59:14] BEGIN ASYNC RESPONSE (ID: 0)
+[2024-11-10T10:59:14] 	Response status code: 200
+[2024-11-10T10:59:14] 	Response body: "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJsZWdlbmRheGUiLCJyb2xlIjoi0JLQtdC00YPRidC40Lkg0KDQsNC30YDQsNCx0L7RgtGH0LjQuiIsImRvblRpZXIiOjAsImJhbiI6ZmFsc2UsIndsIjpbNDAwMV0sIm5iZiI6MTczMTIzNjM1NCwiZXhwIjoxNzMxMjM4MTU0LCJpYXQiOjE3MzEyMzYzNTQsImlzcyI6Imh0dHBzOi8vc3MyMjAuY2x1YiIsImF1ZCI6Imh0dHBzOi8vc3MyMjAuY2x1YiJ9.2JvrkzL0_d2wa4wfQYXYhY1LIpNclpFHxzBOEx_fiqBDavg_N7TAc2cPb5Wm7l7pEIVRHpo8lGpWF1rEJRTH4A"
+[2024-11-10T10:59:14] 	Response headers: {"date":"Sun, 10 Nov 2024 10:59:13 GMT","server":"Kestrel","transfer-encoding":"chunked","content-type":"application/json; charset=utf-8"}
+[2024-11-10T10:59:14] END ASYNC RESPONSE (ID: 0)
+[2024-11-10T11:00:15] BEGIN ASYNC REQUEST (ID: 0)
+[2024-11-10T11:00:15] 	POST http://localhost:7000/api/lobby-connect
+[2024-11-10T11:00:15] 	Request body: {"ckey":"legendaxe","ip":"127.0.0.1"}
+[2024-11-10T11:00:15] 	Request headers: {"Content-Type":"Application/Json"}
+[2024-11-10T11:00:15] END ASYNC REQUEST (ID: 0)
+[2024-11-10T11:00:51] BEGIN ASYNC RESPONSE (ID: 0)
+[2024-11-10T11:00:51] 	Response status code: 200
+[2024-11-10T11:00:51] 	Response body: "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJsZWdlbmRheGUiLCJyb2xlIjoi0JLQtdC00YPRidC40Lkg0KDQsNC30YDQsNCx0L7RgtGH0LjQuiIsImRvblRpZXIiOjAsImJhbiI6ZmFsc2UsIndsIjpbNDAwMV0sIm5iZiI6MTczMTIzNjQxNiwiZXhwIjoxNzMxMjM4MjE2LCJpYXQiOjE3MzEyMzY0MTYsImlzcyI6Imh0dHBzOi8vc3MyMjAuY2x1YiIsImF1ZCI6Imh0dHBzOi8vc3MyMjAuY2x1YiJ9.3qAoZS5qkZKOTDKJl8XR0pwUJeWVZctLDBdczlxn4-ptY5bvgd0044vHeVV-AQ8UG7xiBmlxkzuGddUpzsp3Aw"
+[2024-11-10T11:00:51] 	Response headers: {"content-type":"application/json; charset=utf-8","date":"Sun, 10 Nov 2024 11:00:16 GMT","server":"Kestrel","transfer-encoding":"chunked"}
+[2024-11-10T11:00:51] END ASYNC RESPONSE (ID: 0)
+[2024-11-10T11:01:56] BEGIN ASYNC REQUEST (ID: 0)
+[2024-11-10T11:01:56] 	POST http://localhost:7000/api/lobby-connect
+[2024-11-10T11:01:56] 	Request body: {"ckey":"legendaxe","ip":"127.0.0.1"}
+[2024-11-10T11:01:56] 	Request headers: {"Content-Type":"Application/Json"}
+[2024-11-10T11:01:56] END ASYNC REQUEST (ID: 0)
+[2024-11-10T11:02:35] BEGIN ASYNC RESPONSE (ID: 0)
+[2024-11-10T11:02:35] 	Response status code: 200
+[2024-11-10T11:02:35] 	Response body: "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJsZWdlbmRheGUiLCJyb2xlIjoi0JLQtdC00YPRidC40Lkg0KDQsNC30YDQsNCx0L7RgtGH0LjQuiIsImRvblRpZXIiOjAsImJhbiI6ZmFsc2UsIndsIjpbNDAwMV0sIm5iZiI6MTczMTIzNjUxNywiZXhwIjoxNzMxMjM4MzE3LCJpYXQiOjE3MzEyMzY1MTcsImlzcyI6Imh0dHBzOi8vc3MyMjAuY2x1YiIsImF1ZCI6Imh0dHBzOi8vc3MyMjAuY2x1YiJ9.kxZsfivDb7WkxwOG18ZANdPsIKIj_SbevpDRWg2fNt4rCTGPPjKxdSPcNz24m0AeX0quxUgJJLFunRAXza87Sg"
+[2024-11-10T11:02:35] 	Response headers: {"content-type":"application/json; charset=utf-8","transfer-encoding":"chunked","server":"Kestrel","date":"Sun, 10 Nov 2024 11:01:56 GMT"}
+[2024-11-10T11:02:35] END ASYNC RESPONSE (ID: 0)
+[2024-11-10T11:08:29] BEGIN ASYNC REQUEST (ID: 0)
+[2024-11-10T11:08:29] 	POST http://localhost:7000/api/lobby-connect
+[2024-11-10T11:08:29] 	Request body: {"ckey":"legendaxe","ip":"127.0.0.1"}
+[2024-11-10T11:08:29] 	Request headers: {"Content-Type":"Application/Json"}
+[2024-11-10T11:08:29] END ASYNC REQUEST (ID: 0)
+[2024-11-10T11:08:30] BEGIN ASYNC RESPONSE (ID: 0)
+[2024-11-10T11:08:30] 	Response status code: 200
+[2024-11-10T11:08:30] 	Response body: "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJsZWdlbmRheGUiLCJyb2xlIjoi0JLQtdC00YPRidC40Lkg0KDQsNC30YDQsNCx0L7RgtGH0LjQuiIsImRvblRpZXIiOjAsImJhbiI6ZmFsc2UsIndsIjpbNDAwMV0sIm5iZiI6MTczMTIzNjkxMCwiZXhwIjoxNzMxMjM4NzEwLCJpYXQiOjE3MzEyMzY5MTAsImlzcyI6Imh0dHBzOi8vc3MyMjAuY2x1YiIsImF1ZCI6Imh0dHBzOi8vc3MyMjAuY2x1YiJ9.bWgLGR2-xtMdqPzXwfb7jIavpH2vkcndnub1RaTaUkdn6l5Ixt4hTr4cVM4fiDUr-Y6ofKn3K-rEITUCNRptLw"
+[2024-11-10T11:08:30] 	Response headers: {"content-type":"application/json; charset=utf-8","server":"Kestrel","transfer-encoding":"chunked","date":"Sun, 10 Nov 2024 11:08:29 GMT"}
+[2024-11-10T11:08:30] END ASYNC RESPONSE (ID: 0)
+[2024-11-10T11:09:20] BEGIN ASYNC REQUEST (ID: 0)
+[2024-11-10T11:09:20] 	POST http://localhost:7000/api/lobby-connect
+[2024-11-10T11:09:20] 	Request body: {"ckey":"legendaxe","ip":"127.0.0.1"}
+[2024-11-10T11:09:20] 	Request headers: {"Content-Type":"Application/Json"}
+[2024-11-10T11:09:20] END ASYNC REQUEST (ID: 0)
+[2024-11-10T11:09:21] BEGIN ASYNC RESPONSE (ID: 0)
+[2024-11-10T11:09:21] 	Response status code: 200
+[2024-11-10T11:09:21] 	Response body: "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJsZWdlbmRheGUiLCJyb2xlIjoi0JLQtdC00YPRidC40Lkg0KDQsNC30YDQsNCx0L7RgtGH0LjQuiIsImRvblRpZXIiOjAsImJhbiI6ZmFsc2UsIndsIjpbNDAwMV0sIm5iZiI6MTczMTIzNjk2MSwiZXhwIjoxNzMxMjM4NzYxLCJpYXQiOjE3MzEyMzY5NjEsImlzcyI6Imh0dHBzOi8vc3MyMjAuY2x1YiIsImF1ZCI6Imh0dHBzOi8vc3MyMjAuY2x1YiJ9.ORmQj9cCkhfYm2XoKZFY3nAoJGq6iD6lXilw7Nn0Y2LpBiu0vJ0YxzhEj81bg7gmbUa01k_ZIXjoswPAf7k9hg"
+[2024-11-10T11:09:21] 	Response headers: {"date":"Sun, 10 Nov 2024 11:09:20 GMT","transfer-encoding":"chunked","content-type":"application/json; charset=utf-8","server":"Kestrel"}
+[2024-11-10T11:09:21] END ASYNC RESPONSE (ID: 0)
+[2024-11-10T11:09:55] BEGIN ASYNC REQUEST (ID: 0)
+[2024-11-10T11:09:55] 	POST http://localhost:7000/api/lobby-connect
+[2024-11-10T11:09:55] 	Request body: {"ckey":"legendaxe","ip":"127.0.0.1"}
+[2024-11-10T11:09:55] 	Request headers: {"Content-Type":"Application/Json"}
+[2024-11-10T11:09:55] END ASYNC REQUEST (ID: 0)
+[2024-11-10T11:09:56] BEGIN ASYNC RESPONSE (ID: 0)
+[2024-11-10T11:09:56] 	Response status code: 200
+[2024-11-10T11:09:56] 	Response body: "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJsZWdlbmRheGUiLCJyb2xlIjoi0JLQtdC00YPRidC40Lkg0KDQsNC30YDQsNCx0L7RgtGH0LjQuiIsImRvblRpZXIiOjAsImJhbiI6ZmFsc2UsIndsIjpbNDAwMV0sIm5iZiI6MTczMTIzNjk5NiwiZXhwIjoxNzMxMjM4Nzk2LCJpYXQiOjE3MzEyMzY5OTYsImlzcyI6Imh0dHBzOi8vc3MyMjAuY2x1YiIsImF1ZCI6Imh0dHBzOi8vc3MyMjAuY2x1YiJ9.EJtEfzdajto7cIgJWwf0XnR0ild_ncGPfAi-VoPWdXgcBsv4MYuWWDQTSS0NcoGCQufWUSf9EvqwRctSFT1mew"
+[2024-11-10T11:09:56] 	Response headers: {"content-type":"application/json; charset=utf-8","server":"Kestrel","transfer-encoding":"chunked","date":"Sun, 10 Nov 2024 11:09:55 GMT"}
+[2024-11-10T11:09:56] END ASYNC RESPONSE (ID: 0)
+[2024-11-10T11:10:20] BEGIN ASYNC REQUEST (ID: 0)
+[2024-11-10T11:10:20] 	POST http://localhost:7000/api/lobby-connect
+[2024-11-10T11:10:20] 	Request body: {"ckey":"legendaxe","ip":"127.0.0.1"}
+[2024-11-10T11:10:20] 	Request headers: {"Content-Type":"Application/Json"}
+[2024-11-10T11:10:20] END ASYNC REQUEST (ID: 0)
+[2024-11-10T11:10:20] BEGIN ASYNC RESPONSE (ID: 0)
+[2024-11-10T11:10:20] 	Response status code: 200
+[2024-11-10T11:10:20] 	Response body: "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJsZWdlbmRheGUiLCJyb2xlIjoi0JLQtdC00YPRidC40Lkg0KDQsNC30YDQsNCx0L7RgtGH0LjQuiIsImRvblRpZXIiOjAsImJhbiI6ZmFsc2UsIndsIjpbNDAwMV0sIm5iZiI6MTczMTIzNzAyMCwiZXhwIjoxNzMxMjM4ODIwLCJpYXQiOjE3MzEyMzcwMjAsImlzcyI6Imh0dHBzOi8vc3MyMjAuY2x1YiIsImF1ZCI6Imh0dHBzOi8vc3MyMjAuY2x1YiJ9.oc2za8cGzFFpBT1HpnEEE3FFCr74z-CIVaU1qPnLhQWL2ksfEXvy-6mhj-Xgqj2e2Ofm65F81nDf7DwCN56q0g"
+[2024-11-10T11:10:20] 	Response headers: {"content-type":"application/json; charset=utf-8","transfer-encoding":"chunked","date":"Sun, 10 Nov 2024 11:10:19 GMT","server":"Kestrel"}
+[2024-11-10T11:10:20] END ASYNC RESPONSE (ID: 0)
+[2024-11-10T11:11:02] BEGIN ASYNC REQUEST (ID: 0)
+[2024-11-10T11:11:02] 	POST http://localhost:7000/api/lobby-connect
+[2024-11-10T11:11:02] 	Request body: {"ckey":"legendaxe","ip":"127.0.0.1"}
+[2024-11-10T11:11:02] 	Request headers: {"Content-Type":"Application/Json"}
+[2024-11-10T11:11:02] END ASYNC REQUEST (ID: 0)
+[2024-11-10T11:11:02] BEGIN ASYNC RESPONSE (ID: 0)
+[2024-11-10T11:11:02] 	Response status code: 200
+[2024-11-10T11:11:02] 	Response body: "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJsZWdlbmRheGUiLCJyb2xlIjoi0JLQtdC00YPRidC40Lkg0KDQsNC30YDQsNCx0L7RgtGH0LjQuiIsImRvblRpZXIiOjAsImJhbiI6ZmFsc2UsIndsIjpbNDAwMV0sIm5iZiI6MTczMTIzNzA2MiwiZXhwIjoxNzMxMjM4ODYyLCJpYXQiOjE3MzEyMzcwNjIsImlzcyI6Imh0dHBzOi8vc3MyMjAuY2x1YiIsImF1ZCI6Imh0dHBzOi8vc3MyMjAuY2x1YiJ9.Z8S9E3HXsTGQbX_uCAy4LRZLVbWHZjWwOf-3gZny7Fk2gwJeIFl1teUv_-C46-t2Iebm5GDHQpu_AByzWM1Nyw"
+[2024-11-10T11:11:02] 	Response headers: {"server":"Kestrel","date":"Sun, 10 Nov 2024 11:11:02 GMT","content-type":"application/json; charset=utf-8","transfer-encoding":"chunked"}
+[2024-11-10T11:11:02] END ASYNC RESPONSE (ID: 0)
+[2024-11-10T11:11:23] BEGIN ASYNC REQUEST (ID: 0)
+[2024-11-10T11:11:23] 	POST http://localhost:7000/api/lobby-connect
+[2024-11-10T11:11:23] 	Request body: {"ckey":"legendaxe","ip":"127.0.0.1"}
+[2024-11-10T11:11:23] 	Request headers: {"Content-Type":"Application/Json"}
+[2024-11-10T11:11:23] END ASYNC REQUEST (ID: 0)
+[2024-11-10T11:11:24] BEGIN ASYNC RESPONSE (ID: 0)
+[2024-11-10T11:11:24] 	Response status code: 200
+[2024-11-10T11:11:24] 	Response body: "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJsZWdlbmRheGUiLCJyb2xlIjoi0JLQtdC00YPRidC40Lkg0KDQsNC30YDQsNCx0L7RgtGH0LjQuiIsImRvblRpZXIiOjAsImJhbiI6ZmFsc2UsIndsIjpbNDAwMV0sIm5iZiI6MTczMTIzNzA4NCwiZXhwIjoxNzMxMjM4ODg0LCJpYXQiOjE3MzEyMzcwODQsImlzcyI6Imh0dHBzOi8vc3MyMjAuY2x1YiIsImF1ZCI6Imh0dHBzOi8vc3MyMjAuY2x1YiJ9.X2N6-ip-ZaK3q2M6XCjdHcoxb36rr8lKqTvgC4aewz0kZNB9ZnUhrdlyB-kMC8i9rZKtB10-EqRP1TPOANYOHQ"
+[2024-11-10T11:11:24] 	Response headers: {"date":"Sun, 10 Nov 2024 11:11:23 GMT","server":"Kestrel","content-type":"application/json; charset=utf-8","transfer-encoding":"chunked"}
+[2024-11-10T11:11:24] END ASYNC RESPONSE (ID: 0)
+[2024-11-10T11:12:07] BEGIN ASYNC REQUEST (ID: 0)
+[2024-11-10T11:12:07] 	POST http://localhost:7000/api/lobby-connect
+[2024-11-10T11:12:07] 	Request body: {"ckey":"legendaxe","ip":"127.0.0.1"}
+[2024-11-10T11:12:07] 	Request headers: {"Content-Type":"Application/Json"}
+[2024-11-10T11:12:07] END ASYNC REQUEST (ID: 0)
+[2024-11-10T11:12:08] BEGIN ASYNC RESPONSE (ID: 0)
+[2024-11-10T11:12:08] 	Response status code: 200
+[2024-11-10T11:12:08] 	Response body: "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJsZWdlbmRheGUiLCJyb2xlIjoi0JLQtdC00YPRidC40Lkg0KDQsNC30YDQsNCx0L7RgtGH0LjQuiIsImRvblRpZXIiOjAsImJhbiI6ZmFsc2UsIndsIjpbNDAwMV0sIm5iZiI6MTczMTIzNzEyOCwiZXhwIjoxNzMxMjM4OTI4LCJpYXQiOjE3MzEyMzcxMjgsImlzcyI6Imh0dHBzOi8vc3MyMjAuY2x1YiIsImF1ZCI6Imh0dHBzOi8vc3MyMjAuY2x1YiJ9.wDRsslzBaXAje-1uMUvvocBhoEbY-wjYUBHC1EvR5SXN4HjPDkdXmk69Cifk-NabBttFSbLuZ15SyayRbPO3Ow"
+[2024-11-10T11:12:08] 	Response headers: {"content-type":"application/json; charset=utf-8","transfer-encoding":"chunked","server":"Kestrel","date":"Sun, 10 Nov 2024 11:12:07 GMT"}
+[2024-11-10T11:12:08] END ASYNC RESPONSE (ID: 0)
+[2024-11-10T11:12:42] BEGIN ASYNC REQUEST (ID: 0)
+[2024-11-10T11:12:42] 	POST http://localhost:7000/api/lobby-connect
+[2024-11-10T11:12:42] 	Request body: {"ckey":"legendaxe","ip":"127.0.0.1"}
+[2024-11-10T11:12:42] 	Request headers: {"Content-Type":"Application/Json"}
+[2024-11-10T11:12:42] END ASYNC REQUEST (ID: 0)
+[2024-11-10T11:12:43] BEGIN ASYNC RESPONSE (ID: 0)
+[2024-11-10T11:12:43] 	Response status code: 200
+[2024-11-10T11:12:43] 	Response body: "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJsZWdlbmRheGUiLCJyb2xlIjoi0JLQtdC00YPRidC40Lkg0KDQsNC30YDQsNCx0L7RgtGH0LjQuiIsImRvblRpZXIiOjAsImJhbiI6ZmFsc2UsIndsIjpbNDAwMV0sIm5iZiI6MTczMTIzNzE2MiwiZXhwIjoxNzMxMjM4OTYyLCJpYXQiOjE3MzEyMzcxNjIsImlzcyI6Imh0dHBzOi8vc3MyMjAuY2x1YiIsImF1ZCI6Imh0dHBzOi8vc3MyMjAuY2x1YiJ9.mm95Mz9i42g3DUrqQZinZgwaTKe6ehA9EVRPb6GM7R_pzIuqw0UvYI2d2GaoxcFRxOJJ7IqlwfjZbxIjleUf4Q"
+[2024-11-10T11:12:43] 	Response headers: {"transfer-encoding":"chunked","content-type":"application/json; charset=utf-8","server":"Kestrel","date":"Sun, 10 Nov 2024 11:12:41 GMT"}
+[2024-11-10T11:12:43] END ASYNC RESPONSE (ID: 0)
+[2024-11-10T11:13:19] BEGIN ASYNC REQUEST (ID: 0)
+[2024-11-10T11:13:19] 	POST http://localhost:7000/api/lobby-connect
+[2024-11-10T11:13:19] 	Request body: {"ckey":"legendaxe","ip":"127.0.0.1"}
+[2024-11-10T11:13:19] 	Request headers: {"Content-Type":"Application/Json"}
+[2024-11-10T11:13:19] END ASYNC REQUEST (ID: 0)
+[2024-11-10T11:13:20] BEGIN ASYNC RESPONSE (ID: 0)
+[2024-11-10T11:13:20] 	Response status code: 200
+[2024-11-10T11:13:20] 	Response body: "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJsZWdlbmRheGUiLCJyb2xlIjoi0JLQtdC00YPRidC40Lkg0KDQsNC30YDQsNCx0L7RgtGH0LjQuiIsImRvblRpZXIiOjAsImJhbiI6ZmFsc2UsIndsIjpbNDAwMV0sIm5iZiI6MTczMTIzNzE5OSwiZXhwIjoxNzMxMjM4OTk5LCJpYXQiOjE3MzEyMzcxOTksImlzcyI6Imh0dHBzOi8vc3MyMjAuY2x1YiIsImF1ZCI6Imh0dHBzOi8vc3MyMjAuY2x1YiJ9.mW3J-CAcmMAMjykSOBlYlv07RyPZ-_FIX9sYuAHvOFjey4TCSuUKxlAqw9DXcrEPIKKSiOPArRbldVd-a1kI3A"
+[2024-11-10T11:13:20] 	Response headers: {"date":"Sun, 10 Nov 2024 11:13:19 GMT","content-type":"application/json; charset=utf-8","server":"Kestrel","transfer-encoding":"chunked"}
+[2024-11-10T11:13:20] END ASYNC RESPONSE (ID: 0)
+[2024-11-10T11:13:35] BEGIN ASYNC REQUEST (ID: 0)
+[2024-11-10T11:13:35] 	POST http://localhost:7000/api/lobby-connect
+[2024-11-10T11:13:35] 	Request body: {"ckey":"legendaxe","ip":"127.0.0.1"}
+[2024-11-10T11:13:35] 	Request headers: {"Content-Type":"Application/Json"}
+[2024-11-10T11:13:35] END ASYNC REQUEST (ID: 0)
+[2024-11-10T11:13:35] BEGIN ASYNC RESPONSE (ID: 0)
+[2024-11-10T11:13:35] 	Response status code: 200
+[2024-11-10T11:13:35] 	Response body: "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJsZWdlbmRheGUiLCJyb2xlIjoi0JLQtdC00YPRidC40Lkg0KDQsNC30YDQsNCx0L7RgtGH0LjQuiIsImRvblRpZXIiOjAsImJhbiI6ZmFsc2UsIndsIjpbNDAwMV0sIm5iZiI6MTczMTIzNzIxNSwiZXhwIjoxNzMxMjM5MDE1LCJpYXQiOjE3MzEyMzcyMTUsImlzcyI6Imh0dHBzOi8vc3MyMjAuY2x1YiIsImF1ZCI6Imh0dHBzOi8vc3MyMjAuY2x1YiJ9.oG6EHkWGDzr9ct6PBp_8hI95PbTHq2X_P5egIiM4DbYGpeCf8A2LopfaYJDec-p5YVW5MKpPPoDhkVpy4zCLYw"
+[2024-11-10T11:13:35] 	Response headers: {"transfer-encoding":"chunked","date":"Sun, 10 Nov 2024 11:13:35 GMT","server":"Kestrel","content-type":"application/json; charset=utf-8"}
+[2024-11-10T11:13:35] END ASYNC RESPONSE (ID: 0)
+[2024-11-10T12:28:16] BEGIN ASYNC REQUEST (ID: 0)
+[2024-11-10T12:28:16] 	POST http://localhost:7000/api/lobby-connect
+[2024-11-10T12:28:16] 	Request body: {"ckey":"legendaxe","ip":"127.0.0.1"}
+[2024-11-10T12:28:16] 	Request headers: {"Content-Type":"Application/Json"}
+[2024-11-10T12:28:16] END ASYNC REQUEST (ID: 0)
+[2024-11-10T12:28:19] BEGIN ASYNC RESPONSE (ID: 0)
+[2024-11-10T12:28:19] 	 ----- RESPONSE ERRROR -----
+[2024-11-10T12:28:19] 	 error sending request for url (http://localhost:7000/api/lobby-connect): error trying to connect: tcp connect error: No connection could be made because the target machine actively refused it. (os error 10061)
+[2024-11-10T12:28:19] END ASYNC RESPONSE (ID: 0)
+[2024-11-10T12:29:41] BEGIN ASYNC REQUEST (ID: 0)
+[2024-11-10T12:29:41] 	POST http://localhost:7000/api/lobby-connect
+[2024-11-10T12:29:41] 	Request body: {"ckey":"legendaxe","ip":"127.0.0.1"}
+[2024-11-10T12:29:41] 	Request headers: {"Content-Type":"Application/Json"}
+[2024-11-10T12:29:41] END ASYNC REQUEST (ID: 0)
+[2024-11-10T12:29:45] BEGIN ASYNC RESPONSE (ID: 0)
+[2024-11-10T12:29:45] 	Response status code: 200
+[2024-11-10T12:29:45] 	Response body: "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJsZWdlbmRheGUiLCJyb2xlIjoi0JLQtdC00YPRidC40Lkg0KDQsNC30YDQsNCx0L7RgtGH0LjQuiIsImRvblRpZXIiOjAsImJhbiI6ZmFsc2UsIndsIjpbNDAwMV0sIm5iZiI6MTczMTI0MTc4NCwiZXhwIjoxNzMxMjQzNTg0LCJpYXQiOjE3MzEyNDE3ODQsImlzcyI6Imh0dHBzOi8vc3MyMjAuY2x1YiIsImF1ZCI6Imh0dHBzOi8vc3MyMjAuY2x1YiJ9.eiUMX-ZMJBt13-mmQ-FtqIT7g7F-H4UzKGrpy2erl1c5LDu9oDogO7crHNJUujJtz2AYjswykOKBnDQV9PQHsg"
+[2024-11-10T12:29:45] 	Response headers: {"transfer-encoding":"chunked","server":"Kestrel","content-type":"application/json; charset=utf-8","date":"Sun, 10 Nov 2024 12:29:44 GMT"}
+[2024-11-10T12:29:45] END ASYNC RESPONSE (ID: 0)
+[2024-11-10T12:30:36] BEGIN ASYNC REQUEST (ID: 0)
+[2024-11-10T12:30:36] 	POST http://localhost:7000/api/lobby-connect
+[2024-11-10T12:30:36] 	Request body: {"ckey":"legendaxe","ip":"127.0.0.1"}
+[2024-11-10T12:30:36] 	Request headers: {"Content-Type":"Application/Json"}
+[2024-11-10T12:30:36] END ASYNC REQUEST (ID: 0)
+[2024-11-10T12:30:37] BEGIN ASYNC RESPONSE (ID: 0)
+[2024-11-10T12:30:37] 	Response status code: 200
+[2024-11-10T12:30:37] 	Response body: "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJsZWdlbmRheGUiLCJyb2xlIjoi0JLQtdC00YPRidC40Lkg0KDQsNC30YDQsNCx0L7RgtGH0LjQuiIsImRvblRpZXIiOjAsImJhbiI6ZmFsc2UsIndsIjpbNDAwMV0sIm5iZiI6MTczMTI0MTgzNywiZXhwIjoxNzMxMjQzNjM3LCJpYXQiOjE3MzEyNDE4MzcsImlzcyI6Imh0dHBzOi8vc3MyMjAuY2x1YiIsImF1ZCI6Imh0dHBzOi8vc3MyMjAuY2x1YiJ9.IcbtHMkmj0QLL2Y5vmm_hoIwGxxKbjgiSFPieR6kHMJZqrW8zAF4ApwmPz9qvd2Gh-uPAlfRLARpiTbeya7DFA"
+[2024-11-10T12:30:37] 	Response headers: {"content-type":"application/json; charset=utf-8","transfer-encoding":"chunked","date":"Sun, 10 Nov 2024 12:30:36 GMT","server":"Kestrel"}
+[2024-11-10T12:30:37] END ASYNC RESPONSE (ID: 0)
+[2024-11-10T12:33:20] BEGIN ASYNC REQUEST (ID: 1)
+[2024-11-10T12:33:20] 	POST http://localhost:7000/api/lobby-connect
+[2024-11-10T12:33:20] 	Request body: {"ckey":"legendaxe","ip":"127.0.0.1"}
+[2024-11-10T12:33:20] 	Request headers: {"Content-Type":"Application/Json"}
+[2024-11-10T12:33:20] END ASYNC REQUEST (ID: 1)
+[2024-11-10T12:33:21] BEGIN ASYNC RESPONSE (ID: 1)
+[2024-11-10T12:33:21] 	Response status code: 200
+[2024-11-10T12:33:21] 	Response body: "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJsZWdlbmRheGUiLCJyb2xlIjoi0JLQtdC00YPRidC40Lkg0KDQsNC30YDQsNCx0L7RgtGH0LjQuiIsImRvblRpZXIiOjAsImJhbiI6ZmFsc2UsIndsIjpbNDAwMV0sIm5iZiI6MTczMTI0MjAwMSwiZXhwIjoxNzMxMjQzODAxLCJpYXQiOjE3MzEyNDIwMDEsImlzcyI6Imh0dHBzOi8vc3MyMjAuY2x1YiIsImF1ZCI6Imh0dHBzOi8vc3MyMjAuY2x1YiJ9.WpwoWuInMJaS4W9EuzBNYrWocrUNM5trOt00eOu_V_L05USmOQ2rBRUvvNVrUfvx5PcdbpKySFhW6lGws4QtEA"
+[2024-11-10T12:33:21] 	Response headers: {"server":"Kestrel","content-type":"application/json; charset=utf-8","date":"Sun, 10 Nov 2024 12:33:20 GMT","transfer-encoding":"chunked"}
+[2024-11-10T12:33:21] END ASYNC RESPONSE (ID: 1)

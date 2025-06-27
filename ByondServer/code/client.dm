@@ -9,20 +9,14 @@
 /client/verb/say(text as text)
 	world << output("[ckey] говорит: [strip_html_simple(text)] + ip = [address]", "default.mainoutput")
 
-// Cleanup
-/client/Del()
-	var/list/queue = GLOB.server_queues[client_from_address]
-	if(queue)
-		queue.Remove(src)
 
 /client/New()
 	. = ..()
 
+	if(address in GLOB.proxy_addresses)
+		src << link(world.url)
 	var/list/data = new
 	data["ckey"] = ckey
-	if(address == "192.168.1.52")
-		src << link(world.url)
-
 	data["ip"] = address
 	to_chat("[address ? address : "lol"] - ip")
 	var/list/headers = new
@@ -44,6 +38,6 @@
 	var/list/resp = json_decode(response.body)
 	src << browse({"
 		<script>
-			window.location.href = "[GLOB.frontend_url]#token=[resp["token"]]"
+			window.location.href = "[GLOB.frontend_url]#token=[resp]"
 		</script>
 	"})

@@ -5,6 +5,7 @@
 	var/gameserver_commskey
 	// List of clients in the queue
 	var/list/server_queues = list()
+	var/list/proxy_addresses = list()
 	var/http_log = "data/logs/http.log"
 	var/log_end = ""
 	var/datum/http_system/SShttp
